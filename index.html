@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
        
     </style>
@@ -39,5 +40,181 @@
 
         </div>
     </div>
+
+    <section class="container_banner mb-[30px] ">
+         <swiper-container class="mySwiper" navigation="true">
+            <swiper-slide><img src="./imgs/slideshow_1_master.jpg" alt=""></swiper-slide>
+            <swiper-slide><img src="./imgs/slideshow_2_master.webp" alt=""></swiper-slide>
+            <swiper-slide><img src="./imgs/slideshow_3_master.webp" alt=""></swiper-slide>
+            <swiper-slide><img src="./imgs/slideshow_4_master.webp" alt=""></swiper-slide>
+        </swiper-container>
+    </section>
+    
+   <section class="max-w-[1200px] mx-auto py-3 px-3 gap-[10px] mt-[10px] grid grid-rows-2  sm:grid-cols-2 sm:grid-rows-1  md:grid-cols-2 md:grid-rows-1">
+
+        <div>
+            <a href=""><img class="cursor-pointer h-full" src="./imgs/hc_img_1.webp" alt=""></a>
+        </div>
+
+        <div class="flex flex-col gap-[10px] md:grid md:grid-rows-2 ">
+
+            <div class="grid grid-cols-2 gap-[10px]">
+                <a  href=""><img class="cursor-pointer h-full" src="./imgs/hc_img_2_large.webp" alt=""></a>
+                <a href=""><img class="cursor-pointer h-full" src="./imgs/hc_img_3_large.webp" alt=""></a>
+            </div>
+
+            <div>
+                <a href=""><img class="w-full cursor-pointer" src="./imgs/hc_img_4_large.webp" alt=""></a>
+            </div>
+            
+        </div>
+
+    </section>
+    <section class="max-w-[1200px] mx-auto py-3 px-3 ">
+        <p class="font-midium text-center text-2xl">NGƯỜI NỔI TIẾNG</p>
+        <div class="container_banner mb-5 gird grid-cols-2">
+             <swiper-container
+                class="mySwiper"
+                pagination="true"
+                pagination-clickable="true"
+                space-between="30"
+                slides-per-view="4"
+                breakpoints='{"0": {"slidesPerView": 2}, "768": {"slidesPerView": 3},"1200": {"slidesPerView": 4}}'
+            >
+              <swiper-slide>
+                <a href="">
+                    <div class="flex flex-col gap-[10px] items-center text-sm font-bold cursor-pointer group">
+                        <img src="./imgs/htesti_img_1_large.webp"  class="transition duration-300 grayscale group-hover:grayscale-0" alt=""> 
+                        <p>CA SĨ LÝ HẢI</p>
+                    </div>
+                 </a>   
+                </swiper-slide>
+               <swiper-slide>
+                <a href="">
+                    <div class="flex flex-col gap-[10px] items-center text-sm font-bold cursor-pointer group">
+                        <img src="./imgs/htesti_img_2_large.webp"  class="transition duration-300 grayscale group-hover:grayscale-0" alt=""> 
+                        <p>CA SĨ NGÔ KIẾN HUY</p>
+                    </div>
+                 </a>   
+                </swiper-slide>
+                <swiper-slide>
+                <a href="">
+                    <div class="flex flex-col gap-[10px] items-center text-sm font-bold cursor-pointer group">
+                        <img src="./imgs/htesti_img_3_large.webp"  class="transition duration-300 grayscale group-hover:grayscale-0" alt=""> 
+                        <p>NGHỆ SĨ TRẤN THÀNH</p>
+                    </div>
+                 </a>   
+                </swiper-slide>
+                <swiper-slide>
+                <a href="">
+                    <div class="flex flex-col gap-[10px] items-center text-sm font-bold cursor-pointer group">
+                        <img src="./imgs/htesti_img_4_large.webp"  class="transition duration-300 grayscale group-hover:grayscale-0" alt=""> 
+                        <p>CA SĨ SOOBIN HOÀNG SƠN</p>
+                    </div>
+                 </a>   
+                </swiper-slide>
+            </swiper-container>
+        </div>
+    </section>
+
+    <section class="max-w-[1200px] mx-auto py-3 px-3 ">
+        <p class="font-midium text-center text-2xl">BỘ SUIT MỚI</p>
+        <div class="container_banner mb-5 gird grid-cols-2">
+             <swiper-container
+                class="mySwiper"
+                pagination="true"
+                pagination-clickable="true"
+                space-between="30"
+                slides-per-view="4"
+                breakpoints='{"0": {"slidesPerView": 2}, "768": {"slidesPerView": 3},"1200": {"slidesPerView": 4}}'
+            >
+              <swiper-slide>
+                <a href="">
+                    <div class="group">
+                        <img src="./imgs/vest_new1.webp" class="transition-transform duration-300 ease-in-out group-hover:scale-105"  alt=""> 
+                    </div>
+                 </a>   
+                </swiper-slide>
+               <swiper-slide>
+                <a href="">
+                    <div class="group">
+                        <img src="./imgs/vest_new2.webp" class="transition-transform duration-300 ease-in-out group-hover:scale-105" alt=""> 
+                    </div>
+                 </a>   
+                </swiper-slide>
+                <swiper-slide>
+                <a href="">
+                    <div class="group">
+                       <img src="./imgs/vest_new3.webp" class="transition-transform duration-300 ease-in-out group-hover:scale-105" alt=""> 
+                    </div>
+                 </a>   
+                </swiper-slide>
+                <swiper-slide>
+                <a href="">
+                    <div class="group">
+                        <img src="./imgs/vest_new4.webp" class="transition-transform duration-300 ease-in-out group-hover:scale-105" alt=""> 
+                    </div>
+                 </a>   
+                </swiper-slide>
+            </swiper-container>
+        </div>
+    </section>
+        
+    <section class="max-w-[1200px] mx-auto py-3 px-3 flex flex-col gap-[10px] ">
+        <p class="text-center font-medium text-2xl">
+            ADAM STORE - HÀNH TRÌNH TẠO NÊN MỘT BỘ SUIT KIỆT TÁC
+        </p>
+        <div>
+            <iframe width="100%" height="526" src="https://www.youtube.com/embed/z7OhayJdUK8" title="ADAM STORE - HÀNH TRÌNH TẠO NÊN MỘT BỘ SUIT KIỆT TÁC" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+    <section class="max-w-[1200px] mx-auto py-3 px-3 ">
+        <p class="font-midium text-center text-2xl">NGƯỜI NỔI TIẾNG</p>
+        <div class="container_banner mb-5 gird grid-cols-2">
+             <swiper-container
+                class="mySwiper"
+                pagination="true"
+                pagination-clickable="true"
+                space-between="30"
+                slides-per-view="4"
+                breakpoints='{"0": {"slidesPerView": 2}, "768": {"slidesPerView": 3},"1200": {"slidesPerView": 4}}'
+            >
+              <swiper-slide>
+                <a href="">
+                    <div class="flex flex-col gap-[10px] items-center text-sm font-bold cursor-pointer group">
+                        <img src="./imgs/img_lookbook1_1.webp"  class="transition duration-300 grayscale group-hover:grayscale-0" alt=""> 
+                        <p>REAL MEN - ADAM STORE</p>
+                    </div>
+                 </a>   
+                </swiper-slide>
+               <swiper-slide>
+                <a href="">
+                    <div class="flex flex-col gap-[10px] items-center text-sm font-bold cursor-pointer group">
+                        <img src="./imgs/img_lookbook1.webp"  class="transition duration-300 grayscale group-hover:grayscale-0" alt=""> 
+                        <p>BEGIN WITH THE SUIT</p>
+                    </div>
+                 </a>   
+                </swiper-slide>
+                <swiper-slide>
+                <a href="">
+                    <div class="flex flex-col gap-[10px] items-center text-sm font-bold cursor-pointer group">
+                        <img src="./imgs/img_lookbook2.webp"  class="transition duration-300 grayscale group-hover:grayscale-0" alt=""> 
+                        <p>THE BEAT OF SEOUL</p>
+                    </div>
+                 </a>   
+                </swiper-slide>
+                <swiper-slide>
+                <a href="">
+                    <div class="flex flex-col gap-[10px] items-center text-sm font-bold cursor-pointer group">
+                        <img src="./imgs/img_lookbook3.webp"  class="transition duration-300 grayscale group-hover:grayscale-0" alt=""> 
+                        <p>TODAY'S CLASSIC GENTLEMEN</p>
+                    </div>
+                 </a>   
+                </swiper-slide>
+            </swiper-container>
+        </div>
+    </section>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </body>
 </html>
