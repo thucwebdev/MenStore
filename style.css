@@ -62,8 +62,9 @@ ul{
         font-size: 14px;
     }
     .menu{
-        width: calc(100%-300px-218px);
+        width: calc(100% - 300px - 218px);
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
     }
     .bt{
