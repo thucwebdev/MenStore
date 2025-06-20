@@ -8,7 +8,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-       
+       @media (max-width:1024px) {
+            
+            .section1{
+                .navbar-head{
+                    text-align: center;
+                }
+                .menu{
+                    display: none;
+    
+                }
+                .bars-list{
+                    display: flex;
+                    justify-content: right;
+                }
+            }
+ }
     </style>
 </head>
 <body>
@@ -18,12 +33,51 @@
             <div class="navbar-body">
                 <div class="adam-store center">ADAM STORE</div>
                 <div class="menu">
-                    <div class="bt"><a  href="">SẢN PHẨM<i class="fa-solid fa-chevron-down"></i></a></div>
-                    <div class="bt" ><a  href="">GIỚI THIỆU<i class="fa-solid fa-chevron-down"></i></a></div>
-                    <div class="bt"><a href="">SẢN PHẨM<i class="fa-solid fa-chevron-down"></i></a></div>
+                    
+                    <div class="bt intro" >
+                        <a style="width: 100%;"  href="">GIỚI THIỆU<i class="fa-solid fa-chevron-down"></i></a>
+                        <div class="intro-1">
+                            <div><a href="">GIỚi THIỆU</a></div>
+                            <div><a href="">HỆ THỐNG CỬA HÀNG</a></div>
+                        </div>
+                    </div>
+                    <div class="bt product">
+                        <a href="">SẢN PHẨM<i class="fa-solid fa-chevron-down"></i></a>
+                        <div class="product-1">
+                            <div><a href="">BEST ADAM 2025</a></div>
+                            <div><a href="">SUIT LUXURY</a></div>
+                            <div><a href="">ÁO SƠ MI NAM</a></div>
+                            <div><a href="">ÁO SƠ MI NGẮN TAY NAM</a></div>
+                            <div><a href="">ÁO KHOÁC NAM</a></div>
+                            <div><a href="">MĂNG TÔ - JACKET</a></div>
+                            <div><a href="">ÁO LEN NAM</a></div>
+                            <div><a href="">QUẦN ÂU ADAM</a></div>
+                            <div><a href="">GIÀY DA NAM</a></div>
+                            <div><a href="">ÁO POLO NAM</a></div>
+                            <div><a href="">Áo PHÔNG NAM</a></div>
+                            <div><a href="">QUẦN NGỐ NAM</a></div>
+                            <div><a href="">THẮT LƯNG NAM</a></div>
+                            <div><a href="">QUẦN SỊP NAM</a></div>
+                            <div><a href="">TẤT NAM</a></div>
+                        </div>
+                    </div>
                     <div class="bt"><a href="">LOOK BOOK<i class="fa-solid fa-chevron-down"></i></a></div>
-                    <div class="bt" style="width: 140px;"><a href="">ADAMSTORE 360<i class="fa-solid fa-chevron-down"></i></a></div>
-                    <div class="bt"><a href="">GÓC ADAM<i class="fa-solid fa-chevron-down"></i></a></div>
+                    <div class="bt adam-store360">
+                        <a href="">ADAMSTORE 360<i class="fa-solid fa-chevron-down"></i></a>
+                        <div class="adam-store360-1">
+                            <div><a href="">NEWS</a></div>
+                            <div><a href="">KHUYẾN MÃI</a></div>
+                            <div><a href="">ƯU ĐÃI ĐỐI TÁC ADAM</a></div>
+                            <div><a href="">SAO VIỆT & KHÁCH HÀNG</a></div>
+                            <div><a href="">ADAM'S VIDEO</a></div>
+                        </div>
+                    </div>
+                    <div class="bt tip">
+                        <a href="">GÓC ADAM<i class="fa-solid fa-chevron-down"></i></a>
+                        <div class="tip1">
+                            <div><a href="">ADAM TIPS</a></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="contact">
                     <div class="center" ><a href="" style="text-decoration: none;color: inherit;">Liên hệ</a></div>
@@ -34,6 +88,7 @@
                     <div style="font-size: 18px;" class="center"><a href=""style="color: inherit;"><i  class="fa-solid fa-user"></i></a></div>
                     <div  style="display: flex;align-items: center;"><a href=""style="color: inherit;"><i style="font-size: 18px;" class="fa-solid fa-bag-shopping"></i><span>(0)</span></a></div>
                 </div>
+                <div class="bars-list"><i class="fa-solid fa-bars"></i></div>
             </div>
         </div>
         <div class="container">
@@ -41,7 +96,7 @@
         </div>
     </div>
 
-    <section class="container_banner mb-[30px] ">
+    <section class="container_banner mb-[30px]  ">
          <swiper-container class="mySwiper" navigation="true">
             <swiper-slide><img src="./imgs/slideshow_1_master.jpg" alt=""></swiper-slide>
             <swiper-slide><img src="./imgs/slideshow_2_master.webp" alt=""></swiper-slide>
@@ -214,7 +269,19 @@
             </swiper-container>
         </div>
     </section>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+   
+    <div class="container-footer">
+        <div class="footer">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    
 </body>
 </html>
