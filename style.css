@@ -61,18 +61,21 @@ ul {
     display: flex;
     justify-content: center;
     padding-top: 20px;
+    
   }
   .bt {
     width: 20%;
-    font-size: 13px;
+    font-size: 11px;
     text-align: center;
   }
-
+  .pad-10{
+    padding: 0px 10px;
+  }
   .intro-1 {
     background-color: white;
     width: 200px;
     height: 70px;
-    padding: 10px;
+    padding: 10px 0px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     display: none;
     line-height: 25px;
@@ -94,7 +97,7 @@ ul {
     background-color: white;
     width: 200px;
     height: 390px;
-    padding: 10px;
+    padding: 10px 0px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     display: none;
     line-height: 25px;
@@ -115,7 +118,7 @@ ul {
     background-color: white;
     width: 200px;
     height: 145px;
-    padding: 10px;
+    padding: 10px 0px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     display: none;
     line-height: 25px;
@@ -136,7 +139,7 @@ ul {
     background-color: white;
     width: 200px;
     height: 40px;
-    padding: 10px;
+    padding: 10px 0px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     display: none;
     line-height: 25px;
@@ -200,8 +203,51 @@ ul {
 .container-footer{
     .footer{
     width: 100%;
-    height: 120px;
+    height: 200px;
     padding: 20px;
+    display: flex;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    }
+    .size-list {
+      color: grey;
+      font-size: 14px;
+    }
+    .phone-number{
+      width: 15%;
+      font-size: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .intro-footer{
+      width: 20%;
+      
+    }
+    .policy{
+      width: 25%;
+      
+    }
+    .news-footer{
+      width: 20%;
+    }
+    .follow{
+      width: 20%;
+      padding: 10px;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      background-color: aliceblue;
+      font-size: 13px;
+      text-align: center;
+      gap: 15px ;
+      
+    }
+    .logo{
+      display: flex;
+      justify-content: space-around;
+    }
+    .img-logo{
+      width: 30px;
+      height: 30px;
     }
 }
