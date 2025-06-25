@@ -1,0 +1,20 @@
+
+.container-body{
+    margin-top: 120px;
+    margin-left: 15%;
+    margin-right: 15% ;
+    font-size: 13px;
+}
+.header-body{
+    font-size: 30px;
+}
+.img-center{
+
+    display: flex;
+    justify-content: center;
+    
+}
+.img-content{
+    width: 400px;
+    height: 400px;
+}
