@@ -61,9 +61,8 @@ ul {
     display: flex;
     justify-content: center;
     padding-top: 20px;
-    
   }
-  .bt {
+  .bt{
     width: 20%;
     font-size: 11px;
     text-align: center;
@@ -177,6 +176,22 @@ ul {
     display: none;
   }
 }
+ @media (max-width:1024px) {
+            
+            .section1{
+                .navbar-head{
+                    text-align: center;
+                }
+                .menu{
+                    display: none;
+    
+                }
+                .bars-list{
+                    display: flex;
+                    justify-content: right;
+                }
+            }
+ }
 .container_banner {
   margin-top: 120px;
 
@@ -251,3 +266,5 @@ ul {
       height: 30px;
     }
 }
+
+/* css for page product */
