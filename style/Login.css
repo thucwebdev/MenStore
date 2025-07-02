@@ -19,8 +19,29 @@ body {
     font-size: 50px;
 }
 .log-in-form{
-    font-size: 20px;
+    font-size: 18px;
     width: 40%;
     height: 400px;
-        
+    display: flex;
+    justify-content: center;
+
+}
+.bt-login-signup{
+  display: flex;
+  justify-content: space-between  ;
+}
+.bt-lo{
+  background-color: black;
+  color: white;
+  width: 45%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#result{
+  width: 100%;
+}
+.in{
+  border: solid 0.2px gray;
+  border-radius: 10px;
+  padding: 5px;
 }
