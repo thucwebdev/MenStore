@@ -9,10 +9,8 @@
     font-size: 30px;
 }
 .img-center{
-
     display: flex;
-    justify-content: center;
-    
+    justify-content: center;   
 }
 .img-content{
     width: 400px;
