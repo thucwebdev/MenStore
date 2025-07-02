@@ -213,14 +213,22 @@
       </div>
       <div class="container-body">
         <div class="account-page"><h1>Tài khoản</h1></div>
-        <form action="">
+        
             <div class="log-in-form">
-            <div><input id="account" type="text" placeholder="Tài khoản" required></div>
-            <div><input id="password" type="text" placeholder="Mật khẩu" required></div>
-            <div id="result"></div>
-            <button id="log-in">Đăng nhập</button>
+            <div>
+                <label for="account">Tên đăng nhập:</label>
+                <div class="in"><input id="account" type="text" placeholder="Tài khoản" required></div>
+                <label for="password">Mật khẩu</label>
+                <div class="in"><input id="password" type="text" placeholder="Mật khẩu" required></div>
+                <div id="result"></div>
+                <div class="bt-login-signup">
+                    <button class="bt-lo" id="log-in">Đăng nhập</button>
+                    <button class="bt-lo" id="signup">Đăng ký</button>
+                </div>
+            </div>
+            
         </div>
-        </form>
+        
         
       </div>
       <div class="container-footer">
@@ -314,7 +322,7 @@
         </div>
       </div>
     </div>
-    <script src="index.js"></script>
-    <script src="Login.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/Login.js"></script>
 </body>
 </html>
