@@ -61,9 +61,8 @@ ul {
     display: flex;
     justify-content: center;
     padding-top: 20px;
-    
   }
-  .bt {
+  .bt{
     width: 20%;
     font-size: 11px;
     text-align: center;
@@ -177,6 +176,33 @@ ul {
   
     display: none;
   }
+}
+@media (max-width: 1024px) {
+        .section1 {
+          .navbar-head {
+            text-align: center;
+          }
+          .menu {
+            display: none;
+          }
+          .contact1 {
+            display: none;
+          }
+          .bars-list {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+          }
+        }
+        .container-footer {
+          .footer {
+            display: none;
+          }
+          .footer-reponsive {
+            display: block;
+          }
+        }
+      }
   .Hambug{
     display: flex;
     align-items: center;
@@ -211,7 +237,7 @@ ul {
     display: flex;
     justify-content: space-between;
   }
-}
+ }
 .container_banner {
   margin-top: 120px;
 
@@ -320,3 +346,5 @@ ul {
       display: none;
     }
 }
+
+/* css for page product */

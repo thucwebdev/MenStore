@@ -11,7 +11,7 @@ const Products = [
         id: 2,
         name: "BEGIN WITH THE Vest",
         price: "750,000 VND",
-        img: "./imgs/item1.webp",
+        img: "./imgs/item2.webp",
         size: ["48","49","50","51","52"],
         category: "Vest",
     },
@@ -19,7 +19,7 @@ const Products = [
         id: 3,
         name: "BEGIN WITH THE Vest",
         price: "750,000 VND",
-        img: "./imgs/item1.webp",
+        img: "./imgs/item3.webp",
         size: ["48","49","50","51","52"],
         category: "Vest",
     },
@@ -27,7 +27,7 @@ const Products = [
         id: 4,
         name: "BEGIN WITH THE Vest",
         price: "750,000 VND",
-        img: "./imgs/item1.webp",
+        img: "./imgs/item4.webp",
         size: ["48","49","50","51","52"],
         category: "Vest",
     },
@@ -35,7 +35,7 @@ const Products = [
         id: 5,
         name: "BEGIN WITH THE Vest",
         price: "750,000 VND",
-        img: "./imgs/item1.webp",
+        img: "./imgs/item5.webp",
         size: ["48","49","50","51","52"],
         category: "Vest",
     },
@@ -43,7 +43,7 @@ const Products = [
         id: 6,
         name: "BEGIN WITH THE Vest",
         price: "750,000 VND",
-        img: "./imgs/item1.webp",
+        img: "./imgs/item6.webp",
         size: ["48","49","50","51","52"],
         category: "Vest",
     },
@@ -97,3 +97,21 @@ const Products = [
     }
    
 ]
+
+let item = document.getElementById("item");
+
+const vestProducts = Products.filter(product => product.category === "Vest");
+
+vestProducts.forEach((product) => {
+    item.innerHTML += `
+    <div class="flex flex-col justify-center align-items gap-[15px]">
+                <a href="product_detail.html"><img src="${product.img}" alt=""></a>
+                <p class="text-center text-[16px] uppercase ">${product.name}</p>
+                <p class="text-center text-[red] font-bold">${product.price}</p>
+            </div>
+    `
+})
+
+
+ 
+
