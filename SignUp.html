@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style/style.css" />
-    <link rel="stylesheet" href="./style/Login.css">
+    <link rel="stylesheet" href="./style/signUp.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -212,18 +212,19 @@
         </div>
       </div>
       <div class="container-body">
-        <div class="account-page"><h1>Tài khoản</h1></div>
+        <div class="account-page"><h1>Đăng ký</h1></div>
         
             <div class="log-in-form">
             <div>
                 <label for="account">Tên đăng nhập:</label>
                 <div class="in"><input id="account" type="text" placeholder="Tài khoản" ></div>
-                <label for="password">Mật khẩu</label>
+                <label for="password">Mật khẩu:</label>
                 <div class="in"><input id="password" type="text" placeholder="Mật khẩu" ></div>
+                <label for="repassword">Nhập lại mật khẩu:</label>
+                <div class="in"><input id="repassword" type="text" placeholder="Nhập lại mật khẩu" ></div>
                 <div clas id="result"></div>
                 <div class="bt-login-signup">
-                    <button class="bt-lo" id="log-in">Đăng nhập</button>
-                    <button class="bt-lo" id="signup">Đăng ký</button>
+                    <button class="bt-si" id="signup">Đăng ký</button>
                 </div>
             </div>
             
@@ -323,6 +324,6 @@
       </div>
     </div>
     <script src="./js/index.js"></script>
-    <script src="./js/Login.js"></script>
+    <script src="./js/signup.js"></script>
 </body>
 </html>

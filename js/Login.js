@@ -18,6 +18,7 @@ let islogIn=false;
 // ]
 // localStorage.accounts = JSON.stringify(accounts)
 accounts=JSON.parse(localStorage.accounts);
+// localStorage.clear();
 function CheckAccount(){
     let accountInput = document.getElementById("account").value
     let passwordInput = document.getElementById("password").value
@@ -25,6 +26,7 @@ function CheckAccount(){
     let foundUser = accounts.find((value)=>{
         return  value.account === accountInput;
     })
+    
     if(!foundUser) {
         result.innerText="❌ Tài khoản không tồn tại"
         result.style.color="red"
