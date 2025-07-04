@@ -1,14 +1,12 @@
 import Products from '../src/assets.js';
 
+let item_shirt = document.getElementById("item_shirt");
+console.log(item_shirt);
 
+const shirtProducts = Products.filter(product => product.category === "Shirt");
 
-
-let item = document.getElementById("item");
-
-const vestProducts = Products.filter(product => product.category === "Vest");
-
-vestProducts.forEach((product) => {
-    item.innerHTML += `
+shirtProducts.forEach((product) => {
+    item_shirt.innerHTML += `
     <div class="flex flex-col justify-center align-items gap-[15px] group ">
                 <a href="product_detail.html" class="transition-transform duration-300 ease-in-out group-hover:scale-95 "><img  src="${product.img}" alt=""></a>
                 <p class="text-center text-[16px] uppercase ">${product.name}</p>
@@ -16,9 +14,3 @@ vestProducts.forEach((product) => {
             </div>
     `
 })
-
-
-
-
- 
-
