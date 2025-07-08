@@ -1,113 +1,124 @@
 const Products = [
-    {
-        id: 1,
-        name: "VEST",
-        price: "5,200,000 VND",
-        img: "./imgs/item1.webp",
-        size: ["48","49","50","51","52"],
-        category: "Vest",
-        type: "BỘ SƯU TẬP VEST ADAM 2025"
-    },
-     {
-        id: 2,
-        name: "BEGIN WITH THE Vest",
-        price: "5,200,000 VND",
-        img: "./imgs/item2.webp",
-        size: ["48","49","50","51","52"],
-        category: "Vest",
-         type: "BỘ SƯU TẬP VEST ADAM 2025"
-    },
-     {
-        id: 3,
-        name: "BEGIN WITH THE Vest",
-        price: "5,200,000 VND",
-        img: "./imgs/item3.webp",
-        size: ["48","49","50","51","52"],
-        category: "Vest",
-         type: "BỘ SƯU TẬP VEST ADAM 2025"
-    },
-     {
-        id: 4,
-        name: "BEGIN WITH THE Vest",
-        price: "5,200,000 VND",
-        img: "./imgs/item4.webp",
-        size: ["48","49","50","51","52"],
-        category: "Vest",
-         type: "BỘ SƯU TẬP VEST ADAM 2025"
-    },
-     {
-        id: 5,
-        name: "BEGIN WITH THE Vest",
-        price: "5,200,000 VND",
-        img: "./imgs/item5.webp",
-        size: ["48","49","50","51","52"],
-        category: "Vest",
-         type: "BỘ SƯU TẬP VEST ADAM 2025"
-    },
-     {
-        id: 6,
-        name: "BEGIN WITH THE Vest",
-        price: "5,200,000 VND",
-        img: "./imgs/item6.webp",
-        size: ["48","49","50","51","52"],
-        category: "Vest",
-         type: "BỘ SƯU TẬP VEST ADAM 2025"
-    },
-     {
-        id: 7,
-        name: "BEGIN WITH THE Vest",
-        price: "750,000 VND",
-        img: "./imgs/item7.webp",
-        size: ["48","49","50","51","52"],
-        category: "Shirt",
-        type: "ÁO SƠ MI NAM"
-    },
-     {
-        id: 8,
-        name: "BEGIN WITH THE Vest",
-        price: "750,000 VND",
-        img: "./imgs/item8.webp",
-        size: ["48","49","50","51","52"],
-        category: "Shirt",
-        type: "ÁO SƠ MI NAM"
-    },
-     {
-        id: 9,
-        name: "BEGIN WITH THE Vest",
-        price: "750,000 VND",
-        img: "./imgs/item9.webp",
-        size: ["48","49","50","51","52"],
-        category: "Shirt",
-        type: "ÁO SƠ MI NAM"
-    },
-     {
-        id: 10,
-        name: "BEGIN WITH THE Vest",
-        price: "750,000 VND",
-        img: "./imgs/item10.webp",
-        size: ["48","49","50","51","52"],
-        category: "Shirt",
-        type: "ÁO SƠ MI NAM"
-    },
-     {
-        id: 11,
-        name: "BEGIN WITH THE Vest",
-        price: "750,000 VND",
-        img: "./imgs/item11.webp",
-        size: ["48","49","50","51","52"],
-        category: "Shirt",
-        type: "ÁO SƠ MI NAM"
-    },
-     {
-        id: 12,
-        name: "BEGIN WITH THE Vest",
-        price: "750,000 VND",
-        img: "./imgs/item12.webp",
-        size: ["48","49","50","51","52"],
-        category: "Shirt",
-        type: "ÁO SƠ MI NAM"
-    }
-   
-]
+  {
+    id: 1,
+    name: "Áo vest xanh kẻ vuông - TXV339",
+    price: "5,200,000 VND",
+    img: "./imgs/item1.webp",
+    size: ["48", "49", "50", "51", "52"],
+    category: "Vest",
+    type: "BỘ SƯU TẬP VEST ADAM 2025",
+    color: "Xanh Kẻ Vuông"
+  },
+  {
+    id: 2,
+    name: "Áo vest xanh tím than - TXV330CNB",
+    price: "5,200,000 VND",
+    img: "./imgs/item2.webp",
+    size: ["48", "49", "50", "51", "52"],
+    category: "Vest",
+    type: "BỘ SƯU TẬP VEST ADAM 2025",
+    color: "Xanh Tím Than"
+  },
+  {
+    id: 3,
+    name: "Áo vest đen vân - TXV329",
+    price: "5,250,000 VND",
+    img: "./imgs/item3.webp",
+    size: ["48", "49", "50", "51", "52"],
+    category: "Vest",
+    type: "BỘ SƯU TẬP VEST ADAM 2025",
+    color: "Đen Vân"
+  },
+  {
+    id: 4,
+    name: "Áo Vest Xanh Sáng Trơn - Av315",
+    price: "3,550,000 VND",
+    img: "./imgs/item4.webp",
+    size: ["48", "49", "50", "51", "52"],
+    category: "Vest",
+    type: "BỘ SƯU TẬP VEST ADAM 2025",
+    color: "Xanh Sáng Trơn"
+  },
+  {
+    id: 5,
+    name: "Áo vest xanh kẻ đen - TXV331",
+    price: "5,250,000 VND",
+    img: "./imgs/item5.webp",
+    size: ["48", "49", "50", "51", "52"],
+    category: "Vest",
+    type: "BỘ SƯU TẬP VEST ADAM 2025",
+    color: "Xanh Kẻ Đen"
+  },
+  {
+    id: 6,
+    name: "Áo vest ghi kẻ vuông - AV409",
+    price: "4,050,000 VND",
+    img: "./imgs/item6.webp",
+    size: ["48", "49", "50", "51", "52"],
+    category: "Vest",
+    type: "BỘ SƯU TẬP VEST ADAM 2025",
+    color: "Ghi Kẻ Vuông"
+  },
+  {
+    id: 7,
+    name: "Sơ mi nâu trơn - SMC160N",
+    price: "750,000 VND",
+    img: "./imgs/item7.webp",
+    size: ["48", "49", "50", "51", "52"],
+    category: "Shirt",
+    type: "ÁO SƠ MI NAM",
+    color: "Nâu",
+  },
+  {
+    id: 8,
+    name: "Sơ mi be trơn - SMC160BE",
+    price: "750,000 VND",
+    img: "./imgs/item8.webp",
+    size: ["48", "49", "50", "51", "52"],
+    category: "Shirt",
+    type: "ÁO SƠ MI NAM",
+    color: "Be",
+  },
+  {
+    id: 9,
+    name: "Sơ mi xanh trơn - SMC160XD",
+    price: "750,000 VND",
+    img: "./imgs/item9.webp",
+    size: ["48", "49", "50", "51", "52"],
+    category: "Shirt",
+    type: "ÁO SƠ MI NAM",
+    color: "Ghi",
+  },
+  {
+    id: 10,
+    name: "Sơ mi xanh rêu trơn - SMC160XR",
+    price: "750,000 VND",
+    img: "./imgs/item10.webp",
+    size: ["48", "49", "50", "51", "52"],
+    category: "Shirt",
+    type: "ÁO SƠ MI NAM",
+    color: "Xanh Rêu",
+  },
+  {
+    id: 11,
+    name: "Sơ mi tím trơn - SMC161TIM",
+    price: "750,000 VND",
+    img: "./imgs/item11.webp",
+    size: ["48", "49", "50", "51", "52"],
+    category: "Shirt",
+    type: "ÁO SƠ MI NAM",
+    color: "Tím",
+  },
+  {
+    id: 12,
+    name: "Sơ mi xanh trơn - SMC161XD",
+    price: "750,000 VND",
+    img: "./imgs/item12.webp",
+    size: ["48", "49", "50", "51", "52"],
+    category: "Shirt",
+    type: "ÁO SƠ MI NAM",
+    color: "Xanh",
+  },
+];
 
-export default Products
+export default Products;

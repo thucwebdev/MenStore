@@ -28,7 +28,7 @@
                         <div class="product-1">
                             <div class="pad-10"><a href="./product_vest.html">BEST ADAM 2025</a></div>
                             <div class="pad-10"><a href="">SUIT LUXURY</a></div>
-                            <div class="pad-10"><a href="">ÁO SƠ MI NAM</a></div>
+                            <div class="pad-10"><a href="./product_shirt.html">ÁO SƠ MI NAM</a></div>
                             <div class="pad-10"><a href="">ÁO SƠ MI NGẮN TAY NAM</a></div>
                             <div class="pad-10"><a href="">ÁO KHOÁC NAM</a></div>
                             <div class="pad-10"><a href="">MĂNG TÔ - JACKET</a></div>
@@ -84,13 +84,15 @@
    
     <div class="max-w-[1200px] mx-auto py-3 px-3 mt-[30px] flex flex-col gap-[20px]  md:flex-row">
         <div class="w-full md:w-1/2  gap-[10px] flex ">
-            <div class=" w-full md:w-1/2 flex justify-center md:items-start"><img src="./imgs/item7.webp" alt=""></div>
-            <div class="md:w-1/2 hidden md:block"><img src="./imgs/item7.webp" alt=""></div>
+            <div class=" w-full md:w-1/2 flex justify-center md:items-start"><img id="product-img" class="cursor-pointer"  alt=""></div>
+            <div class="md:w-1/2 hidden md:block"><img id="product-img2" class="cursor-pointer" alt=""></div>
         </div>
         <div class="md:w-1/2 md:px-10">
-            <h1 class="uppercase text-[20px] mb-2">Sơ mi nâu trơn - SMC160N</h1>
-            <p class="text-[14px] mb-2">SMC160N48</p>
-            <p class="text-[18px] font-bold text-[#231F20] mb-3">750,000 VND</p>
+
+            <h1 id="product-name" class="text-[20px] uppercase"></h1>
+
+            <!-- <p class="text-[14px] mb-2">SMC160N48</p> -->
+            <p id="product-price" class="text-[18px] font-bold text-[#231F20] mb-3"></p>
             <div class="flex items-center mb-3">
                 <p class="text-[14px] mr-[20px]">SIZE:</p>
                 <div class="flex flex-wrap gap-[10px] items-center">
@@ -114,7 +116,7 @@
             </div>
 
             <div class="flex flex-col gap-[15px] mt-[55px]">
-              <p class="text-[14px]"> <span class="font-bold">TÊN SẢN PHẨM: </span> Áo Sơ Mi Nâu Trơn</p>
+              <p  class="text-[14px] font-bold"> TÊN SẢN PHẨM: <span id="product-name-des" class="font-medium"></span> </p>
               <div>
                 <p class="text-[14px] font-bold mb-4">THÔNG SỐ SẢN PHẨM:</p>
                 <p class="text-[14px] font-bold">Chất liệu:</p>
@@ -123,7 +125,7 @@
                   <li>Microfiber tạo độ mềm tự nhiên, chống tĩnh điện và dễ làm sạch bụi bẩn.</li>
                   <li>Spandex tạo độ co dãn thoải mái.</li>
                 </ul>
-                <p class="text-[14px] my-4"> <span class="font-bold">Màu sắc: </span> Nâu</p>
+                <p class="text-[14px] my-4 font-bold"> Màu sắc: <span id="product-color" class="font-medium"></span></p>
                 <p class="text-[14px] font-bold">Size:</p>
                 <ul class="list-disc list-inside text-[14px] mb-4">
                   <li>Size 48: Chiều cao: 1m65 - 1m70, Cân nặng: 53 - 59kg, Ngực: 88cm, Vai: 41cm.</li>
@@ -163,6 +165,7 @@
       <p class="font-midium text-center text-2xl">SẢN PHẨM LIÊN QUAN</p>
       <div class="container_banner mb-5 mt-6 gird grid-cols-2">
         <swiper-container
+          id="relate_item"
           class="mySwiper"
           pagination="true"
           pagination-clickable="true"
@@ -170,72 +173,7 @@
           slides-per-view="4"
           breakpoints='{"0": {"slidesPerView": 2}, "768": {"slidesPerView": 3},"1200": {"slidesPerView": 4}}'
         >
-          <swiper-slide>
-            <a href="">
-              <div class="group">
-                <img
-                  src="./imgs/item7.webp"
-                  class="transition-transform duration-300 ease-in-out group-hover:scale-105"
-                  alt=""
-                />
-              </div>
-            </a>
-          </swiper-slide>
-          <swiper-slide>
-            <a href="">
-              <div class="group">
-                <img
-                  src="./imgs/item8.webp"
-                  class="transition-transform duration-300 ease-in-out group-hover:scale-105"
-                  alt=""
-                />
-              </div>
-            </a>
-          </swiper-slide>
-          <swiper-slide>
-            <a href="">
-              <div class="group">
-                <img
-                  src="./imgs/item9.webp"
-                  class="transition-transform duration-300 ease-in-out group-hover:scale-105"
-                  alt=""
-                />
-              </div>
-            </a>
-          </swiper-slide>
-          <swiper-slide>
-            <a href="">
-              <div class="group">
-                <img
-                  src="./imgs/item10.webp"
-                  class="transition-transform duration-300 ease-in-out group-hover:scale-105"
-                  alt=""
-                />
-              </div>
-            </a>
-          </swiper-slide>
-          <swiper-slide>
-            <a href="">
-              <div class="group">
-                <img
-                  src="./imgs/item11.webp"
-                  class="transition-transform duration-300 ease-in-out group-hover:scale-105"
-                  alt=""
-                />
-              </div>
-            </a>
-          </swiper-slide>
-          <swiper-slide>
-            <a href="">
-              <div class="group">
-                <img
-                  src="./imgs/item12.webp"
-                  class="transition-transform duration-300 ease-in-out group-hover:scale-105"
-                  alt=""
-                />
-              </div>
-            </a>
-          </swiper-slide>
+         
         </swiper-container>
       </div>
     </section>
@@ -335,4 +273,5 @@
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script type="module" src="./js/detail.js"></script>
 </html>
