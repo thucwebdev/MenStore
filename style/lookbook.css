@@ -1,0 +1,33 @@
+.body{
+   
+}
+.container-lookbook{
+    margin: 120px;
+    padding: 10px;
+h1{
+    font-size: 25px;
+    font-weight: 800;
+    text-align: center;
+}
+.lookbook-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.content{
+    width: 275px;
+    height: 650px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.time{
+    font-size: 12px;
+    font-weight: lighter;
+}
+.content-text{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+}
+}
