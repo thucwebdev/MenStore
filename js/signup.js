@@ -1,26 +1,15 @@
-let islogIn = false;
-// const accounts=[
-//     {
-//         account: "Lam113",
-//         password: "123",
-
-//     },
-//     {
-//         account: "Lam123",
-//         password: "123",
-  
-//     },
-//     {
-//         account: "Lam133",
-//         password: "123",
-    
-//     }
-// ]
-// localStorage.accounts = JSON.stringify(accounts)
+let accounts=[
+    {
+        account: "lam113",
+        password: "123",
+        islogIn: false
+    },
+]
+localStorage.accounts = JSON.stringify(accounts)
 accounts = JSON.parse(localStorage.accounts);
 // localStorage.clear()
 function SignUp() {
-  let accountInput = document.getElementById("account").value;
+  let accountInput = document.getElementById("account").value.toLowerCase();
   let passwordInput = document.getElementById("password").value;
   let repasswordInput = document.getElementById("repassword").value;
   let result = document.getElementById("result");
@@ -29,19 +18,24 @@ function SignUp() {
   });
 
   if (!foundUser) {
-    if (passwordInput !== repasswordInput) {
+    if(accountInput.length < 8) {
+    result.innerText = "❌ Tài khoản chứa ít nhất 8 kí tự";
+    result.style.color = "red";
+    }
+    else if (passwordInput !== repasswordInput) {
       result.innerText = "❌ Mật khẩu nhập lại không đúng";
       result.style.color = "red";
     } else {
       let acc = {
         account: accountInput,
         password: passwordInput,
+        islogIn: false,
       };
       accounts.push(acc);
       JSON.stringify(accounts);
       localStorage.accounts = JSON.stringify(accounts);
       result.innerText = "✅ Đăng ký thành công";
-      result.style.color = "green";
+      result.style.color = "green";     
       window.location.href = "./login.html"
     }
   } else {

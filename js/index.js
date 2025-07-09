@@ -1,4 +1,12 @@
 
+accounts = JSON.parse(localStorage.accounts);
+let foundUser = accounts.find((value) => {
+    return value.islogIn === true;
+  });
+
+  showuser =document.getElementById("used")
+  if(foundUser) showuser.innerText = foundUser.account;
+
 let status_menu = true;
 let status_listIntro = true;
 let status_listPolicy = true;
@@ -126,3 +134,4 @@ function TogglePlus(listMenu, buttonid,statButton) {
     buttonid.innerText = "-";
   }
 }
+
