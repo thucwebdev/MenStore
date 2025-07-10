@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
     <link rel="stylesheet" href="./style/style.css" />
-    <link rel="stylesheet" href="./style/Login.css">
+    <link rel="stylesheet" href="./style/lookbook.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -14,40 +14,18 @@
       referrerpolicy="no-referrer"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <style>
   
-      @media (max-width: 1024px) {
-        .section1 {
-          .navbar-head {
-            text-align: center;
-          }
-          .menu {
-            display: none;
-          }
-          .contact1 {
-            display: none;
-          }
-          .bars-list {
-            display: flex;
-            justify-content: end;
-            align-items: center;
-          } 
-        }
-        .container-footer {
-          .footer {
-            display: none;
-          }
-          .footer-reponsive {
-            display: block;
-          }
-        }
-      }
+      
     </style>
-</head>
-<body>
-        <div class="section1">
+  </head>
+  <body>
+    <div class="section1">
       <div class="navbar">
         <div class="navbar-head">
+          
           <a href="" class="navbar-head"
             >Hệ thống
             <span
@@ -79,9 +57,9 @@
             <div class="bt product">
               <a href="">SẢN PHẨM<i class="fa-solid fa-chevron-down"></i></a>
               <div class="product-1">
-                <div class="pad-10"><a href="">BEST ADAM 2025</a></div>
+                <div class="pad-10"><a href="./product_vest.html">BEST ADAM 2025</a></div>
                 <div class="pad-10"><a href="">SUIT LUXURY</a></div>
-                <div class="pad-10"><a href="">ÁO SƠ MI NAM</a></div>
+                <div class="pad-10"><a href="./product_shirt.html">ÁO SƠ MI NAM</a></div>
                 <div class="pad-10"><a href="">ÁO SƠ MI NGẮN TAY NAM</a></div>
                 <div class="pad-10"><a href="">ÁO KHOÁC NAM</a></div>
                 <div class="pad-10"><a href="">MĂNG TÔ - JACKET</a></div>
@@ -133,16 +111,18 @@
                 type="text"
                 placeholder="Tìm kiếm"
               />
-            </div>
-            <div style="font-size: 18px" class="center">
-              <a href="" style="color: inherit"
+            </div >
+            <div style="font-size: 18px" class="user" >
+              <a href="Login.html" style="color: inherit"
                 ><i class="fa-solid fa-user"></i
               ></a>
+              <div id="used" class="center"></div>
             </div>
+            
             <div style="display: flex; align-items: center">
               <a href="" style="color: inherit"
                 ><i style="font-size: 18px" class="fa-solid fa-bag-shopping"></i
-                ><span>(0)</span></a
+                ></a
               >
             </div>
           </div>
@@ -170,9 +150,9 @@
               <button class="bt-head" id="plus-product-header" onclick="OnclickPlusProductHeader()">+</button>
             </div>
             <div class="list-header" id="list-product-header">
-                <div class="list-menu-header"><a href="">Best adam 2025</a></div>
+                <div class="list-menu-header"><a href="./product_vest.html">BST VEST ADAM 2025</a></div>
                 <div class="list-menu-header"><a href="">Suit luxury</a></div>
-                <div class="list-menu-header"><a href="">Áo sơ mi nam</a></div>
+                <div class="list-menu-header"><a href="./product_shirt.html">Áo sơ mi nam</a></div>
                 <div class="list-menu-header"><a href="">Áo sơ mi ngắn tay nam</a></div>
                 <div class="list-menu-header"><a href="">Măng-tô Jacket</a></div>
                 <div class="list-menu-header"><a href="">Áo len nam</a></div>
@@ -211,27 +191,14 @@
           </div>
         </div>
       </div>
-      <div class="container-body">
-        <div class="account-page"><h1>Tài khoản</h1></div>
-        
-            <div class="log-in-form">
-            <div>
-                <label for="account">Tên đăng nhập:</label>
-                <div class="in"><input id="account" type="text" placeholder="Tài khoản"></div>
-                <label for="password">Mật khẩu</label>
-                <div class="in"><input id="password" type="password" placeholder="Mật khẩu" ></div>
-                <div id="result"></div>
-                <div class="bt-login-signup">
-                    <button class="bt-lo" id="log-in">Đăng nhập</button>
-                    <button class="bt-lo" id="signup" onclick="window.location.href='signUp.html'">Đăng ký</button>
-                </div>
-            </div>
-            
-        </div>
-        
-        
+      <div class="container"></div>
+    </div>
+    <div class="container-lookbook">
+      <h1>LOOKBOOK</h1>
+      <div class="lookbook-content" id="lookbook-content">  
       </div>
-      <div class="container-footer border-t-2 border-gray-300">
+    </div>
+    <div class="container-footer border-t-2 border-gray-300">
       <div class="footer">
         <div class="phone-number">
           <div><i class="fa-solid fa-phone"> </i>0938 888 835</div>
@@ -323,6 +290,6 @@
       </div>
     </div>
     <script src="./js/index.js"></script>
-    <script src="./js/Login.js"></script>
-</body>
+    <script src="./js/lookbook.js"></script>
+  </body>
 </html>
