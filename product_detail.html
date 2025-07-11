@@ -68,7 +68,7 @@
                         <input style="border: none ;width: 100px;" type="text" placeholder="Tìm kiếm">
                     </div>
                     <div style="font-size: 18px;" class="center"><a href=""style="color: inherit;"><i  class="fa-solid fa-user"></i></a></div>
-                    <div  style="display: flex;align-items: center;"><a href=""style="color: inherit;"><i style="font-size: 18px;" class="fa-solid fa-bag-shopping"></i><span>(0)</span></a></div>
+                    <div  style="display: flex;align-items: center;"><a href="./cart.html"style="color: inherit;"><i style="font-size: 18px;" class="fa-solid fa-bag-shopping mr-1"></i><span id="cart-count">(0)</span></a></div>
                 </div>
                 <div class="bars-list"><i class="fa-solid fa-bars"></i></div>
             </div>
@@ -79,7 +79,7 @@
     </div>
     <div class="banner_product mt-[153px] h-[200px] sm:h-[250px] max-w-screen w-full overflow-hidden relative ">
         <img class="w-full h-full object-cover scale-105 brightness-50 transition duration-300 " src="./imgs/banner_item.png" alt="">
-        <p class="text-[white] absolute inset-0 flex items-center justify-center font-bold  text-[24px] ">ÁO SƠ MI NAM</p>
+        <p id ="type_name_product" class="text-[white] absolute inset-0 flex items-center justify-center font-bold  text-[24px] "></p>
     </div>
    
     <div class="max-w-[1200px] mx-auto py-3 px-3 mt-[30px] flex flex-col gap-[20px]  md:flex-row">
@@ -95,24 +95,18 @@
             <p id="product-price" class="text-[18px] font-bold text-[#231F20] mb-3"></p>
             <div class="flex items-center mb-3">
                 <p class="text-[14px] mr-[20px]">SIZE:</p>
-                <div class="flex flex-wrap gap-[10px] items-center">
-                    <div class="flex items-center justify-center px-2 min-w-[35px] h-[35px] border solid border-[#ccc] rounded-[999px] text-[12px] cursor-pointer size">48</div>
-                    <div class="flex items-center justify-center px-2 min-w-[35px] h-[35px] border solid border-[#ccc] rounded-[999px] text-[12px] cursor-pointer size">49</div>
-                    <div class="flex items-center justify-center px-2 min-w-[35px] h-[35px] border solid border-[#ccc] rounded-[999px] text-[12px] cursor-pointer size">50</div>
-                    <div class="flex items-center justify-center px-2 min-w-[35px] h-[35px] border solid border-[#ccc] rounded-[999px] text-[12px] cursor-pointer size">51</div>
-                    <div class="flex items-center justify-center px-2 min-w-[35px] h-[35px] border solid border-[#ccc] rounded-[999px] text-[12px] cursor-pointer size">52</div>
-                    <div class="flex items-center justify-center px-2 min-w-[35px] h-[35px] border solid border-[#ccc] rounded-[999px] text-[12px] cursor-pointer size">53</div>
-                    <div class="flex items-center justify-center px-2 min-w-[35px] h-[35px] border solid border-[#ccc] rounded-[999px] text-[12px] cursor-pointer size">54</div>
+                <div id="size-options" class="flex flex-wrap gap-[10px] items-center">
+                    <!-- <div class="flex items-center justify-center px-2 min-w-[35px] h-[35px] border solid border-[#ccc] rounded-[999px] text-[12px] cursor-pointer size">48</div> -->
                 </div>
             </div>
             <p class="text-[13px] italic">Hướng dẫn chọn size</p>
             <div>
               
             </div>
-            <p class="my-[25px] text-[14px]">Số lượng <span><input class=" w-[50px]  ml-4 border solid border-black text-center py-1" type="number" min="1" value="1"></span></p>
+            <p class="my-[25px] text-[14px]">Số lượng <span><input id="quantity-input" class=" w-[50px]  ml-4 border solid border-black text-center py-1" type="number" min="1" value="1"></span></p>
             <div class="flex gap-[10px]">
-                <button class="bg-white text-[black] text-[14px] w-1/2 height-[45px] py-2 px-3  border-[2px] solid border-gray-300 rounded-[999px] uppercase">Thêm vào giỏ </button>
-                <button class="bg-black text-[white] text-[14px] w-1/2 height-[45px]  py-2 px-3 border-[2px] solid border-black rounded-[999px] uppercase">Mua ngay</button>
+                <button id="add-to-cart" class="bg-white text-[black] text-[14px] w-1/2 height-[45px] py-2 px-3  border-[2px] solid border-gray-300 rounded-[999px] uppercase">Thêm vào giỏ </button>
+                <button id="buy-now" class="bg-black text-[white] text-[14px] w-1/2 height-[45px]  py-2 px-3 border-[2px] solid border-black rounded-[999px] uppercase">Mua ngay</button>
             </div>
 
             <div class="flex flex-col gap-[15px] mt-[55px]">
@@ -152,6 +146,69 @@
         </div>
     </div>
 
+     <!-- Tailwind Warning Modal -->
+    <div id="warningModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden modal-overlay">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 transform transition-all duration-300 modal-content">
+            <!-- Header -->
+            <div class="bg-orange-500 text-white px-6 py-4 rounded-t-lg flex items-center justify-between">
+                <div class="flex items-center">
+                    <i class="fas fa-exclamation-triangle text-xl mr-3"></i>
+                    <h3 class="text-lg font-semibold">Cảnh báo</h3>
+                </div>
+                <button onclick="closeWarningModal()" class="text-white hover:text-gray-200 transition-colors">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Body -->
+            <div class="p-6 text-center">
+                <div class="mb-4">
+                    <i class="fas fa-exclamation-circle text-orange-500 text-5xl"></i>
+                </div>
+                <p id="warningMessage" class="text-gray-700 text-lg font-medium"></p>
+            </div>
+            
+            <!-- Footer -->
+            <div class="px-6 py-4 bg-gray-50 rounded-b-lg flex justify-center">
+                <button onclick="closeWarningModal()" class="bg-orange-500 hover:bg-orange-800 text-white px-6 py-2 rounded-lg transition-colors duration-200 flex items-center">
+                    Đóng
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tailwind Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden modal-overlay">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 transform transition-all duration-300 modal-content">
+            <!-- Header -->
+            <div class="bg-green-500 text-white px-6 py-4 rounded-t-lg flex items-center justify-between">
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle text-xl mr-3"></i>
+                    <h3 class="text-lg font-semibold">Thành công</h3>
+                </div>
+                <button onclick="closeSuccessModal()" class="text-white hover:text-gray-200 transition-colors">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Body -->
+            <div class="p-6 text-center">
+                <div class="mb-4">
+                    <i class="fas fa-check-circle text-green-500 text-5xl"></i>
+                </div>
+                <p id="successMessage" class="text-gray-700 text-lg font-medium"></p>
+            </div>
+            
+            <!-- Footer -->
+            <div class="px-6 py-4 bg-gray-50 rounded-b-lg flex justify-center">
+                <button onclick="closeSuccessModal()" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition-colors duration-200 flex items-center">
+                    Đóng
+                </button>
+            </div>
+        </div>
+    </div>
+
+
     <div class="max-w-[1200px] mx-auto py-3 px-3">
       <div class="flex justify-start items-center gap-[5px] mt-[20px] mb-[20px]">
         <p class="font-bold text-[14px] py-[10px] px-[15px] bg-black text-[white] cursor-pointer">THÔNG SỐ </p>
@@ -177,6 +234,11 @@
         </swiper-container>
       </div>
     </section>
+
+    <div class="banner_product mt-[20px] h-[200px] sm:h-[250px] max-w-screen w-full overflow-hidden relative ">
+        <img class="w-full h-full object-cover scale-105 brightness-50 transition duration-300 " src="./imgs/banner_bottom_body_img.png" alt="">
+        <p class="text-[white] absolute inset-0 flex items-center justify-center font-bold  text-[24px] uppercase ">ADAM STORE - Thương hiệu veston may sẵn</p>
+    </div>
 
      <div class="container-footer border-t-2 border-gray-300">
       <div class="footer">
@@ -269,9 +331,12 @@
         </div>
       </div>
     </div>
-</body>
+
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-    <script type="module" src="./js/detail.js"></script>
+     <script type="module" src="./js/detail.js"></script>
+</body>
+
+   
 </html>

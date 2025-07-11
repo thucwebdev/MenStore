@@ -37,6 +37,8 @@ body {
   width: 100%;
   border-radius: 10px;
   cursor: pointer;
+  padding: 5px 10px;
+  margin-top: 5px;
 }
 #result{
   width: 100%;
@@ -44,5 +46,9 @@ body {
 .in{
   border: solid 0.2px gray;
   border-radius: 10px;
-  padding: 5px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+.in input{
+  outline: none;
 }
