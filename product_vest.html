@@ -1,105 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" >
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      @media (max-width: 1024px) {
+        .section1 {
+          .navbar-head {
+            text-align: center;
+          }
+          .menu {
+            display: none;
+          }
+          .contact1 {
+            display: none;
+          }
+          .bars-list {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+          }
+        }
+        .container-footer {
+          .footer {
+            display: none;
+          }
+          .footer-reponsive {
+            display: block;
+          }
+        }
+      }
+    </style>
     <title>Sản phẩm Vest</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="section1">
-        <div class="navbar">
-            <div class="navbar-head"><a href="" class="navbar-head">Hệ thống <span style="background-color: black;color: white; padding: 2px 5px; font-weight: 900;">60</span> cửa hàng</a></div>
-            <div class="navbar-body">
-                <div class="adam-store center"><a href="index.html">ADAM STORE</a></div>
-                <div class="menu">
-                    
-                    <div class="bt intro" >
-                        <a style="width: 100%;"  href="intro.html">GIỚI THIỆU<i class="fa-solid fa-chevron-down"></i></a>
-                        <div class="intro-1">
-                            <div class="pad-10" ><a href="intro.html">GIỚi THIỆU</a></div>
-                            <div class="pad-10"><a href="">HỆ THỐNG CỬA HÀNG</a></div>
-                        </div>
-                    </div>
-                    <div class="bt product">
-                        <a href="">SẢN PHẨM<i class="fa-solid fa-chevron-down"></i></a>
-                        <div class="product-1">
-                            <div class="pad-10"><a href="./product_vest.html">BEST ADAM 2025</a></div>
-                            <div class="pad-10"><a href="">SUIT LUXURY</a></div>
-                            <div class="pad-10"><a href="./product_shirt.html">ÁO SƠ MI NAM</a></div>
-                            <div class="pad-10"><a href="">ÁO SƠ MI NGẮN TAY NAM</a></div>
-                            <div class="pad-10"><a href="">ÁO KHOÁC NAM</a></div>
-                            <div class="pad-10"><a href="">MĂNG TÔ - JACKET</a></div>
-                            <div class="pad-10"><a href="">ÁO LEN NAM</a></div>
-                            <div class="pad-10"><a href="">QUẦN ÂU ADAM</a></div>
-                            <div class="pad-10"><a href="">GIÀY DA NAM</a></div>
-                            <div class="pad-10"><a href="">ÁO POLO NAM</a></div>
-                            <div class="pad-10"><a href="">Áo PHÔNG NAM</a></div>
-                            <div class="pad-10"><a href="">QUẦN NGỐ NAM</a></div>
-                            <div class="pad-10"><a href="">THẮT LƯNG NAM</a></div>
-                            <div class="pad-10"><a href="">QUẦN SỊP NAM</a></div>
-                            <div class="pad-10"><a href="">TẤT NAM</a></div>
-                        </div>
-                    </div>
-                    <div class="bt"><a href="./lookbook.html">LOOK BOOK<i class="fa-solid fa-chevron-down"></i></a></div>
-                    <div class="bt adam-store360">
-                        <a href="">ADAMSTORE 360<i class="fa-solid fa-chevron-down"></i></a>
-                        <div class="adam-store360-1">
-                            <div class="pad-10"><a href="">NEWS</a></div>
-                            <div class="pad-10"><a href="">KHUYẾN MÃI</a></div>
-                            <div class="pad-10"><a href="">ƯU ĐÃI ĐỐI TÁC ADAM</a></div>
-                            <div class="pad-10"><a href="">SAO VIỆT & KHÁCH HÀNG</a></div>
-                            <div class="pad-10"><a href="">ADAM'S VIDEO</a></div>
-                        </div>
-                    </div>
-                    <div class="bt tip">
-                        <a href="">GÓC ADAM<i class="fa-solid fa-chevron-down"></i></a>
-                        <div class="tip1">
-                            <div class="pad-10"><a href="">ADAM TIPS</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact">
-                    <div class="center" ><a href="" style="text-decoration: none;color: inherit;">Liên hệ</a></div>
-                    <div class="search"> 
-                        <a href=""style="color: inherit;"><i class="fa-solid fa-magnifying-glass"></i></a>
-                        <input style="border: none ;width: 100px;" type="text" placeholder="Tìm kiếm">
-                    </div>
-                    <div style="font-size: 18px;" class="center"><a href=""style="color: inherit;"><i  class="fa-solid fa-user"></i></a></div>
-                    <div  style="display: flex;align-items: center;"><a href=""style="color: inherit;"><i style="font-size: 18px;" class="fa-solid fa-bag-shopping"></i><span>(0)</span></a></div>
-                </div>
-                <div class="bars-list"><i class="fa-solid fa-bars"></i></div>
+      <div class="navbar">
+        <div class="navbar-head">
+          
+          <a href="" class="navbar-head"
+            >Hệ thống
+            <span
+              style="
+                background-color: black;
+                color: white;
+                padding: 2px 5px;
+                font-weight: 900;
+              "
+              >60</span
+            >
+            cửa hàng</a
+          >
+        </div>
+        <div class="navbar-body">
+          <div class="adam-store center">
+            <a href="index.html">ADAM STORE</a>
+          </div>
+          <div class="menu">
+            <div class="bt intro">
+              <a style="width: 100%" href="intro.html"
+                >GIỚI THIỆU<i class="fa-solid fa-chevron-down"></i
+              ></a>
+              <div class="intro-1">
+                <div class="pad-10"><a href="intro.html">GIỚi THIỆU</a></div>
+                <div class="pad-10"><a href="">HỆ THỐNG CỬA HÀNG</a></div>
+              </div>
             </div>
+            <div class="bt product">
+              <a href="">SẢN PHẨM<i class="fa-solid fa-chevron-down"></i></a>
+              <div class="product-1">
+                <div class="pad-10"><a href="./product_vest.html">BEST ADAM 2025</a></div>
+                <div class="pad-10"><a href="">SUIT LUXURY</a></div>
+                <div class="pad-10"><a href="./product_shirt.html">ÁO SƠ MI NAM</a></div>
+                <div class="pad-10"><a href="">ÁO SƠ MI NGẮN TAY NAM</a></div>
+                <div class="pad-10"><a href="">ÁO KHOÁC NAM</a></div>
+                <div class="pad-10"><a href="">MĂNG TÔ - JACKET</a></div>
+                <div class="pad-10"><a href="">ÁO LEN NAM</a></div>
+                <div class="pad-10"><a href="">QUẦN ÂU ADAM</a></div>
+                <div class="pad-10"><a href="">GIÀY DA NAM</a></div>
+                <div class="pad-10"><a href="">ÁO POLO NAM</a></div>
+                <div class="pad-10"><a href="">Áo PHÔNG NAM</a></div>
+                <div class="pad-10"><a href="">QUẦN NGỐ NAM</a></div>
+                <div class="pad-10"><a href="">THẮT LƯNG NAM</a></div>
+                <div class="pad-10"><a href="">QUẦN SỊP NAM</a></div>
+                <div class="pad-10"><a href="">TẤT NAM</a></div>
+              </div>
+            </div>
+            <div class="bt">
+              <a href="lookbook.html">LOOK BOOK<i class="fa-solid fa-chevron-down"></i></a>
+            </div>
+            <div class="bt adam-store360">
+              <a href=""
+                >ADAMSTORE 360<i class="fa-solid fa-chevron-down"></i
+              ></a>
+              <div class="adam-store360-1">
+                <div class="pad-10"><a href="">NEWS</a></div>
+                <div class="pad-10"><a href="">KHUYẾN MÃI</a></div>
+                <div class="pad-10"><a href="">ƯU ĐÃI ĐỐI TÁC ADAM</a></div>
+                <div class="pad-10"><a href="">SAO VIỆT & KHÁCH HÀNG</a></div>
+                <div class="pad-10"><a href="">ADAM'S VIDEO</a></div>
+              </div>
+            </div>
+            <div class="bt tip">
+              <a href="">GÓC ADAM<i class="fa-solid fa-chevron-down"></i></a>
+              <div class="tip1">
+                <div class="pad-10"><a href="">ADAM TIPS</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="contact">
+            <div class="center contact1">
+              <a href="" style="text-decoration: none; color: inherit"
+                >Liên hệ</a
+              >
+            </div>
+            <div class="search">
+              <a href="" style="color: inherit"
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
+              <input
+                style="border: none; width: 100px"
+                type="text"
+                placeholder="Tìm kiếm"
+              />
+            </div >
+            <div style="font-size: 18px" class="user" >
+              <a href="Login.html" style="color: inherit"
+                ><i class="fa-solid fa-user"></i
+              ></a>
+              <div id="used" class="center"></div>
+            </div>
+            
+            <div style="display: flex; align-items: center">
+              <a href="cart.html" style="color: inherit"
+                ><i style="font-size: 18px" class="fa-solid fa-bag-shopping "> <span id="cart-count" style="font-style: normal!important; font-weight: 400; font-size: 14px;"></span></i
+                ></a
+              >
+            </div>
+          </div>
+          <div class="bars-list">
+            <div class="hambug">
+              <button id="menu" onclick="OnclickMenu()">
+                <i class="fa-solid fa-bars"></i>
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="container">
 
+        <div class="list-menu" id="listMenu">
+          <div>
+            <div class="bar">
+              <a href="intro.html">GIỚI THIỆU</a>
+              <button class="bt-head" id="plus-intro-header" onclick="OnclickPlusIntroHeader()">+</button>
+            </div>
+            <div class="list-header" id="list-intro-header">
+                <div class="list-menu-header"><a href="intro.html">Giới thiệu</a></div>
+                <div class="list-menu-header"><a href="">Hệ thống cửa hàng</a></div>
+            </div>
+            <div class="bar">
+              <a href="">SẢN PHẨM</a>
+              <button class="bt-head" id="plus-product-header" onclick="OnclickPlusProductHeader()">+</button>
+            </div>
+            <div class="list-header" id="list-product-header">
+                <div class="list-menu-header"><a href="./product_vest.html">BST VEST ADAM 2025</a></div>
+                <div class="list-menu-header"><a href="">Suit luxury</a></div>
+                <div class="list-menu-header"><a href="./product_shirt.html">Áo sơ mi nam</a></div>
+                <div class="list-menu-header"><a href="">Áo sơ mi ngắn tay nam</a></div>
+                <div class="list-menu-header"><a href="">Măng-tô Jacket</a></div>
+                <div class="list-menu-header"><a href="">Áo len nam</a></div>
+                <div class="list-menu-header"><a href="">Quần âu Adam</a></div>
+                <div class="list-menu-header"><a href="">Giày da nam</a></div>
+                <div class="list-menu-header"><a href="">Áo polo nam</a></div>
+                <div class="list-menu-header"><a href="">Áo phông nam</a></div>
+                <div class="list-menu-header"><a href="">Quần ngố nam</a></div>
+                <div class="list-menu-header"><a href="">Thắt lưng nam</a></div>
+                <div class="list-menu-header"><a href="">Quần sịp nam</a></div>
+                <div class="list-menu-header"><a href="">Tất nam</a></div>
+                  
+            </div>
+            <div class="bar">
+              <a href="">LOOKOOK</a>
+              <button class="bt-head">+</button>
+            </div>
+            
+            <div class="bar">
+              <a href="">ADAM360</a>
+              <button class="bt-head" id="plus-adam360" onclick="OnclickPlusAdam360()">+</button>
+            </div>
+            <div class="list-header" id="list-adam360-header">
+                <div class="list-menu-header"><a href="">News</a></div>
+                <div class="list-menu-header"><a href="">Khuyến mãi</a></div>
+                <div class="list-menu-header"><a href="">Ưu đãi đối tác Adam</a></div>
+                <div class="list-menu-header"><a href="">Sao việt & Khách hàng</a></div>
+            </div>
+            <div class="bar">
+              <a href="">GÓC ADAM</a>
+              <button class="bt-head" id="plus-adam-corner">+</button>
+            </div>
+            <div class="list-header" id="list-adamcorner">
+              <div class="list-menu-header"><a href="">Adam's tips</a></div>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="container"></div>
     </div>
-    <div class="banner_product mt-[153px] h-[200px] sm:h-[250px] max-w-screen w-full overflow-hidden relative ">
-        <img class="w-full h-full object-cover scale-105 brightness-50 transition duration-300 " src="./imgs/banner_item.png" alt="">
-        <p class="text-[white] absolute inset-0 flex items-center justify-center font-bold  text-[24px] ">BỘ SƯU TẬP VEST ADAM 2025</p>
+    <div
+      class="banner_product mt-[153px] h-[200px] sm:h-[250px] max-w-screen w-full overflow-hidden relative"
+    >
+      <img
+        class="w-full h-full object-cover scale-105 brightness-50 transition duration-300"
+        src="./imgs/banner_item.png"
+        alt=""
+      />
+      <p
+        class="text-[white] absolute inset-0 flex items-center justify-center font-bold text-[24px]"
+      >
+        BỘ SƯU TẬP VEST ADAM 2025
+      </p>
     </div>
     <div class="max-w-[1200px] mx-auto py-3 px-3">
-        <div class="flex justify-between items-center flex-wrap py-3">
-            <p class=" w-[284px] cursor-pointer text-[14px]">Bo loc <span><i class="fa-solid fa-chevron-down"></i></span></p>
-            <p class="w-[284px] font-bold  text-[24px] text-[black] text-center">BỘ SƯU TẬP VEST ADAM 2025</p>
-            <div class="w-[284px]">
-                <label for="">Sap xep</label>
-                <select class="border solid border-black-300 py-2 px-3" name="" id="">
-                    <option value="">Tuy chon</option>
-                    <option value="#">Gia tu thap den cao</option>
-                    <option value="#">Gia tu cao den thap</option>
-                    <option value="#">San pham ban chay</option>
-                </select>
-            </div>
+      <div class="flex justify-between items-center flex-wrap py-3">
+        <p class="w-[284px] cursor-pointer text-[14px]">
+          Bo loc <span><i class="fa-solid fa-chevron-down"></i></span>
+        </p>
+        <p class="w-[284px] font-bold text-[24px] text-[black] text-center">
+          BỘ SƯU TẬP VEST ADAM 2025
+        </p>
+        <div class="w-[284px]">
+          <label for="">Sắp xếp</label>
+          <select class="border solid border-black-300 py-2 px-3" name="" id="">
+            <option value="">Tùy chọn</option>
+            <option value="#">Giá từ thấp đến cao</option>
+            <option value="#">Giá từ cao đến thấp</option>
+          </select>
         </div>
-        <div id="item" class="grid grid-cols-2 md:grid-cols-3 gap-[10px]">
-            
-        </div>
+      </div>
+      <div id="item" class="grid grid-cols-2 md:grid-cols-3 gap-[10px]"></div>
     </div>
-     <div class="container-footer border-t-2 border-gray-300">
+
+    <div class="banner_product mt-[20px] h-[200px] sm:h-[250px] max-w-screen w-full overflow-hidden relative ">
+        <img class="w-full h-full object-cover scale-105 brightness-50 transition duration-300 " src="./imgs/banner_bottom_body_img.png" alt="">
+        <p class="text-[white] absolute inset-0 flex items-center justify-center font-bold  text-[24px] uppercase ">ADAM STORE - Thương hiệu veston may sẵn</p>
+    </div>
+
+    <div class="container-footer border-t-2 border-gray-300">
       <div class="footer">
         <div class="phone-number">
           <div><i class="fa-solid fa-phone"> </i>0938 888 835</div>
@@ -190,6 +344,7 @@
         </div>
       </div>
     </div>
-</body>
-<script type="module" src="js/product_vest.js"></script>
+    <script type="module" src="js/product_vest.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
 </html>

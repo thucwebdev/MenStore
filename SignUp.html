@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Đăng ký</title>
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/signUp.css">
     <link
@@ -45,9 +45,10 @@
     </style>
 </head>
 <body>
-        <div class="section1">
+<div class="section1">
       <div class="navbar">
         <div class="navbar-head">
+          
           <a href="" class="navbar-head"
             >Hệ thống
             <span
@@ -79,9 +80,9 @@
             <div class="bt product">
               <a href="">SẢN PHẨM<i class="fa-solid fa-chevron-down"></i></a>
               <div class="product-1">
-                <div class="pad-10"><a href="">BEST ADAM 2025</a></div>
+                <div class="pad-10"><a href="./product_vest.html">BEST ADAM 2025</a></div>
                 <div class="pad-10"><a href="">SUIT LUXURY</a></div>
-                <div class="pad-10"><a href="">ÁO SƠ MI NAM</a></div>
+                <div class="pad-10"><a href="./product_shirt.html">ÁO SƠ MI NAM</a></div>
                 <div class="pad-10"><a href="">ÁO SƠ MI NGẮN TAY NAM</a></div>
                 <div class="pad-10"><a href="">ÁO KHOÁC NAM</a></div>
                 <div class="pad-10"><a href="">MĂNG TÔ - JACKET</a></div>
@@ -97,7 +98,7 @@
               </div>
             </div>
             <div class="bt">
-              <a href="./lookbook.html">LOOK BOOK<i class="fa-solid fa-chevron-down"></i></a>
+              <a href="lookbook.html">LOOK BOOK<i class="fa-solid fa-chevron-down"></i></a>
             </div>
             <div class="bt adam-store360">
               <a href=""
@@ -133,16 +134,18 @@
                 type="text"
                 placeholder="Tìm kiếm"
               />
-            </div>
-            <div style="font-size: 18px" class="center">
-              <a href="" style="color: inherit"
+            </div >
+            <div style="font-size: 18px" class="user" >
+              <a href="Login.html" style="color: inherit"
                 ><i class="fa-solid fa-user"></i
               ></a>
+              <div id="used" class="center"></div>
             </div>
+            
             <div style="display: flex; align-items: center">
               <a href="" style="color: inherit"
-                ><i style="font-size: 18px" class="fa-solid fa-bag-shopping"></i
-                ><span>(0)</span></a
+                ><i style="font-size: 18px" class="fa-solid fa-bag-shopping "> <span id="cart-count" style="font-style: normal!important; font-weight: 400; font-size: 14px;"></span></i
+                ></a
               >
             </div>
           </div>
@@ -162,7 +165,7 @@
               <button class="bt-head" id="plus-intro-header" onclick="OnclickPlusIntroHeader()">+</button>
             </div>
             <div class="list-header" id="list-intro-header">
-                <div class="list-menu-header"><a href="">Giới thiệu</a></div>
+                <div class="list-menu-header"><a href="intro.html">Giới thiệu</a></div>
                 <div class="list-menu-header"><a href="">Hệ thống cửa hàng</a></div>
             </div>
             <div class="bar">
@@ -170,9 +173,9 @@
               <button class="bt-head" id="plus-product-header" onclick="OnclickPlusProductHeader()">+</button>
             </div>
             <div class="list-header" id="list-product-header">
-                <div class="list-menu-header"><a href="">Best adam 2025</a></div>
+                <div class="list-menu-header"><a href="./product_vest.html">BST VEST ADAM 2025</a></div>
                 <div class="list-menu-header"><a href="">Suit luxury</a></div>
-                <div class="list-menu-header"><a href="">Áo sơ mi nam</a></div>
+                <div class="list-menu-header"><a href="./product_shirt.html">Áo sơ mi nam</a></div>
                 <div class="list-menu-header"><a href="">Áo sơ mi ngắn tay nam</a></div>
                 <div class="list-menu-header"><a href="">Măng-tô Jacket</a></div>
                 <div class="list-menu-header"><a href="">Áo len nam</a></div>
@@ -211,6 +214,8 @@
           </div>
         </div>
       </div>
+      <div class="container"></div>
+    </div>
       <div class="container-body">
         <div class="account-page"><h1>Đăng ký</h1></div>
         
@@ -222,7 +227,7 @@
                 <div class="in"><input id="password" type="password" placeholder="Mật khẩu" ></div>
                 <label for="repassword">Nhập lại mật khẩu:</label>
                 <div class="in"><input id="repassword" type="password" placeholder="Nhập lại mật khẩu" ></div>
-                <div clas id="result"></div>
+                <div  id="result"></div>
                 <div class="bt-login-signup">
                     <button class="bt-si" id="signup">Đăng ký</button>
                 </div>

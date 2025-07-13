@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - Shopping Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .cart-item {
+            transition: all 0.3s ease;
+        }
+        .cart-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .quantity-btn {
+            transition: all 0.2s ease;
+        }
+        .quantity-btn:hover {
+            transform: scale(1.1);
+        }
+        .empty-cart {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .cart-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        .btn-danger {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+        .modal-overlay {
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            transform: scale(0.9);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .modal-content-enter-active {
+            transform: scale(1);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <button onclick="goBack()" class="text-gray-600 hover:text-gray-900 transition-colors">
+                        <i class="fas fa-arrow-left text-xl"></i>
+                    </button>
+                    <h1 class="text-2xl font-bold text-gray-900">
+                        <i class="fas fa-shopping-cart mr-2 text-blue-600"></i>
+                        Giỏ hàng của bạn
+                    </h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">
+                        <span id="cart-count">0</span> sản phẩm
+                    </span>
+                    <button onclick="clearAllCart()" class="text-red-600 hover:text-red-800 transition-colors">
+                        <i class="fas fa-trash-alt"></i>
+                        Xóa tất cả
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Cart Items -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-lg shadow-sm border">
+                    <div class="p-6 border-b">
+                        <h2 class="text-lg font-semibold text-gray-900">Sản phẩm trong giỏ hàng</h2>
+                    </div>
+                    <div id="cart-items" class="p-6">
+                        <!-- Cart items will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-sm border sticky top-8">
+                    <div class="cart-summary text-white p-6 rounded-t-lg">
+                        <h3 class="text-lg font-semibold mb-4">
+                            <i class="fas fa-receipt mr-2"></i>
+                            Tổng quan đơn hàng
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span>Tạm tính:</span>
+                                <span id="subtotal">0₫</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Phí vận chuyển:</span>
+                                <span id="shipping">30,000₫</span>
+                            </div>
+                            <div class="border-t border-white/20 pt-3">
+                                <div class="flex justify-between text-xl font-bold">
+                                    <span>Tổng cộng:</span>
+                                    <span id="total">0₫</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <button onclick="checkout()" class="w-full btn-primary text-white py-3 px-6 rounded-lg font-semibold text-lg mb-4">
+                            <i class="fas fa-credit-card mr-2"></i>
+                            Thanh toán
+                        </button>
+                        <button onclick="continueShopping()" class="w-full border border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+                            <i class="fas fa-shopping-bag mr-2"></i>
+                            Tiếp tục mua sắm
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Empty Cart State -->
+    <div id="empty-cart" class="hidden">
+        <div class="text-center py-20 empty-cart">
+            <div class="mb-8">
+                <i class="fas fa-shopping-cart text-6xl text-gray-300"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Giỏ hàng trống</h2>
+            <p class="text-gray-600 mb-8">Bạn chưa có sản phẩm nào trong giỏ hàng</p>
+            <button onclick="continueShopping()" class="btn-primary text-white py-3 px-8 rounded-lg font-semibold">
+                <i class="fas fa-shopping-bag mr-2"></i>
+                Bắt đầu mua sắm
+            </button>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden modal-overlay">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 modal-content">
+            <div class="p-6">
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-question-circle text-4xl text-yellow-500"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-center mb-4">Xác nhận</h3>
+                <p id="confirmMessage" class="text-gray-600 text-center mb-6"></p>
+                <div class="flex space-x-4">
+                    <button onclick="closeConfirmModal()" class="flex-1 bg-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-400 transition-colors">
+                        Hủy
+                    </button>
+                    <button id="confirmButton" class="flex-1 btn-danger text-white py-2 px-4 rounded-lg">
+                        Xác nhận
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden modal-overlay">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 modal-content">
+            <div class="bg-green-500 text-white px-6 py-4 rounded-t-lg flex items-center justify-between">
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle text-xl mr-3"></i>
+                    <h3 class="text-lg font-semibold">Thành công</h3>
+                </div>
+                <button onclick="closeSuccessModal()" class="text-white hover:text-gray-200 transition-colors">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="p-6 text-center">
+                <div class="mb-4">
+                    <i class="fas fa-check-circle text-green-500 text-5xl"></i>
+                </div>
+                <p id="successMessage" class="text-gray-700 text-lg font-medium"></p>
+            </div>
+            <div class="px-6 py-4 bg-gray-50 rounded-b-lg flex justify-center">
+                <button onclick="closeSuccessModal()" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg transition-colors duration-200 flex items-center">
+                    <i class="fas fa-check mr-2"></i>
+                    Đóng
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cart management functions
+        function getCart() {
+            try {
+                const cart = localStorage.getItem('cart');
+                return cart ? JSON.parse(cart) : [];
+            } catch (error) {
+                console.error('Error getting cart from localStorage:', error);
+                return [];
+            }
+        }
+
+        function saveCart(cart) {
+            try {
+                localStorage.setItem('cart', JSON.stringify(cart));
+                console.log('Cart saved:', cart);
+            } catch (error) {
+                console.error('Error saving cart to localStorage:', error);
+            }
+        }
+
+        function formatPrice(price) {
+            // Remove any non-numeric characters except dots and commas
+            const numericPrice = price.toString().replace(/[^\d.,]/g, '');
+            // Convert to number and format
+            const num = parseFloat(numericPrice.replace(/,/g, ''));
+            return num.toLocaleString('vi-VN') + '₫';
+        }
+
+        function calculateItemTotal(price, quantity) {
+            const numericPrice = parseFloat(price.toString().replace(/[^\d.,]/g, '').replace(/,/g, ''));
+            return numericPrice * quantity;
+        }
+
+        function updateQuantity(itemId, size, newQuantity) {
+            let cart = getCart();
+            const itemIndex = cart.findIndex(item => item.id === itemId && item.size === size);
+            
+            if (itemIndex !== -1) {
+                if (newQuantity <= 0) {
+                    cart.splice(itemIndex, 1);
+                } else {
+                    cart[itemIndex].quantity = newQuantity;
+                }
+                saveCart(cart);
+                loadCartItems();
+            }
+        }
+
+        function removeItem(itemId, size) {
+            let cart = getCart();
+            cart = cart.filter(item => !(item.id === itemId && item.size === size));
+            saveCart(cart);
+            loadCartItems();
+            showSuccessModal('Đã xóa sản phẩm khỏi giỏ hàng!');
+        }
+
+        function loadCartItems() {
+            const cart = getCart();
+            const cartItemsContainer = document.getElementById('cart-items');
+            const emptyCartContainer = document.getElementById('empty-cart');
+            const mainContent = document.querySelector('main');
+
+            if (cart.length === 0) {
+                mainContent.classList.add('hidden');
+                emptyCartContainer.classList.remove('hidden');
+                return;
+            }
+
+            mainContent.classList.remove('hidden');
+            emptyCartContainer.classList.add('hidden');
+
+            let cartHTML = '';
+            let subtotal = 0;
+
+            cart.forEach((item, index) => {
+                const itemTotal = calculateItemTotal(item.price, item.quantity);
+                subtotal += itemTotal;
+
+                cartHTML += `
+                    <div class="cart-item border-b border-gray-200 pb-6 mb-6 last:border-b-0 last:mb-0">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <img src="${item.img}" alt="${item.name}" class="w-20 h-20 object-cover rounded-lg">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-lg font-medium text-gray-900 truncate">${item.name}</h3>
+                                    <button onclick="showConfirmModal('${item.id}', '${item.size}', 'remove')" class="text-red-600 hover:text-red-800 transition-colors ml-4">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="flex items-center space-x-4 mb-3">
+                                    <span class="text-sm text-gray-600">Size: <span class="font-semibold">${item.size}</span></span>
+                                    <span class="text-sm text-gray-600">Giá: <span class="font-semibold text-red-600">${formatPrice(item.price)}</span></span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <span class="text-sm text-gray-600">Số lượng:</span>
+                                        <div class="flex items-center space-x-2">
+                                            <button onclick="updateQuantity('${item.id}', '${item.size}', ${item.quantity - 1})" class="quantity-btn w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors">
+                                                <i class="fas fa-minus text-xs"></i>
+                                            </button>
+                                            <span class="w-12 text-center font-semibold">${item.quantity}</span>
+                                            <button onclick="updateQuantity('${item.id}', '${item.size}', ${item.quantity + 1})" class="quantity-btn w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors">
+                                                <i class="fas fa-plus text-xs"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-bold text-gray-900">${formatPrice(itemTotal)}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            cartItemsContainer.innerHTML = cartHTML;
+
+            // Update summary
+            const shipping = subtotal > 0 ? 30000 : 0;
+            const total = subtotal + shipping;
+
+            document.getElementById('cart-count').textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('subtotal').textContent = formatPrice(subtotal);
+            document.getElementById('shipping').textContent = subtotal > 0 ? formatPrice(shipping) : '0₫';
+            document.getElementById('total').textContent = formatPrice(total);
+        }
+
+        function showConfirmModal(itemId, size, action) {
+            const modal = document.getElementById('confirmModal');
+            const message = document.getElementById('confirmMessage');
+            const confirmButton = document.getElementById('confirmButton');
+
+            if (action === 'remove') {
+                message.textContent = 'Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?';
+                confirmButton.onclick = () => {
+                    removeItem(itemId, size);
+                    closeConfirmModal();
+                };
+            } else if (action === 'clear') {
+                message.textContent = 'Bạn có chắc chắn muốn xóa tất cả sản phẩm khỏi giỏ hàng?';
+                confirmButton.onclick = () => {
+                    clearCart();
+                    closeConfirmModal();
+                };
+            }
+
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.querySelector('.modal-content').classList.add('modal-content-enter-active');
+            }, 10);
+        }
+
+        function closeConfirmModal() {
+            const modal = document.getElementById('confirmModal');
+            modal.querySelector('.modal-content').classList.remove('modal-content-enter-active');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        function showSuccessModal(message) {
+            document.getElementById('successMessage').textContent = message;
+            const modal = document.getElementById('successModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.querySelector('.modal-content').classList.add('modal-content-enter-active');
+            }, 10);
+        }
+
+        function closeSuccessModal() {
+            const modal = document.getElementById('successModal');
+            modal.querySelector('.modal-content').classList.remove('modal-content-enter-active');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        function clearCart() {
+            localStorage.removeItem('cart');
+            loadCartItems();
+            showSuccessModal('Đã xóa tất cả sản phẩm khỏi giỏ hàng!');
+        }
+
+        function clearAllCart() {
+            showConfirmModal('', '', 'clear');
+        }
+
+        function checkout() {
+            const cart = getCart();
+            if (cart.length === 0) {
+                showSuccessModal('Giỏ hàng trống, vui lòng thêm sản phẩm!');
+                return;
+            }
+            
+            // Simulate checkout process
+            showSuccessModal('Đặt hàng thành công! Cảm ơn bạn đã mua sắm.');
+            setTimeout(() => {
+                clearCart();
+            }, 2000);
+        }
+
+        function continueShopping() {
+            // Redirect to shop page
+            window.location.href = 'index.html'; // Thay đổi URL theo trang shop của bạn
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('confirmModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeConfirmModal();
+            }
+        });
+
+        document.getElementById('successModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeSuccessModal();
+            }
+        });
+
+        // Load cart items when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCartItems();
+            console.log('Cart loaded:', getCart());
+        });
+    </script>
+</body>
+</html>
